@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Números</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            margin: 0;
+            padding-top: 60px; /* Espaço para o título fixo */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .topo h2 {
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            text-align: center;
+            max-width: 300px; /* Ajustado para ser menor */
+            width: 100%;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            padding: 10px; /* Reduzido para caber na tela */
+            margin: 5px 0;
+            font-size: 1.5em; /* Reduzido para caber na tela */
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        li:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .titulo-lista {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #ffeb3b;
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+            li {
+                font-size: 1.3em;
+                padding: 8px;
+            }
+            .topo h2 {
+                font-size: 1.5em;
+            }
+            .titulo-lista {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topo">
+        <h2></h2>
+    </div>
+
+    <div class="container">
+        <h1>Lista de Números</h1>
+        <div class="titulo-lista">Números de 1 a 10</div> <!-- Título da Lista -->
+        <ul id="listaNumeros">
+            <!-- Os números serão inseridos aqui via JavaScript -->
+        </ul>
+    </div>
+
+    <script>
+        function exibirNumeros() {
+            var lista = document.getElementById("listaNumeros");
+            for (var i = 1; i <= 10; i++) {
+                console.log(i);
+                var item = document.createElement("li");
+                item.textContent = i;
+                lista.appendChild(item);
+            }
+        }
+        exibirNumeros();
+    </script>
+</body>
+</html>
